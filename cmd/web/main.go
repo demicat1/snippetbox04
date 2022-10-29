@@ -18,7 +18,6 @@ type application struct {
 }
 
 func main() {
-	//terraria
 	addr := flag.String("addr", ":4000", "HTTP network address")
 	dsn := flag.String("dsn", "postgresql://web:pass@localhost:5432/snippetbox", "PostgreSQL data source name")
 	flag.Parse()
