@@ -21,7 +21,7 @@ type application struct {
 }
 
 func main() {
-	addr := flag.String("addr", ":4000", "HTTP network address")
+	addr := flag.String("addr", "localhost:4000", "HTTP network address")
 	dsn := flag.String("dsn", "postgresql://web:pass@localhost:5432/snippetbox", "PostgreSQL data source name")
 	flag.Parse()
 
@@ -47,7 +47,7 @@ func main() {
 	}
 
 	srv := &http.Server{
-		Addr:     "localhost" + *addr,
+		Addr:     *addr,
 		ErrorLog: errorLog,
 		Handler:  app.routes(),
 	}
